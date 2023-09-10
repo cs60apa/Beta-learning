@@ -13,7 +13,7 @@ app.use(cookieParser());
 // cors is a middleware that allows us to make requests from the client
 app.use(cors({
     origin: process.env.ORIGIN,
-}));
+})); 
 
 
 // Testing api
