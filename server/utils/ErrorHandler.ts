@@ -1,3 +1,5 @@
+import exp from "constants";
+
 class ErrorHandler extends Error {
   statusCode: Number;
 
@@ -8,4 +10,5 @@ class ErrorHandler extends Error {
     Error.captureStackTrace(this, this.constructor);
   }
 }
-module.exports = ErrorHandler;
+//module.exports = ErrorHandler;
+export default ErrorHandler;
