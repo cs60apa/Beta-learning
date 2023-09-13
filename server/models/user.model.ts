@@ -80,3 +80,4 @@ userSchema.methods.comparePassword = async function (password: string): Promise<
 const User: Model<IUser> = mongoose.model("User", userSchema);
 export default User;
 
+// ende on negative 1:58:53
