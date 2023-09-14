@@ -30,6 +30,10 @@ export const registerUser = CatchAsyncError(async (req: Request, res: Response, 
         }
 
         const activationToken = createActivationToken(user);
+
+         const activationCode = activationToken.activationCode;
+
+
         
     } catch (error:any){
         return next(new ErrorHandler(error.message, 400))
