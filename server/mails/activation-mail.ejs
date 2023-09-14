@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .email-body {
+            padding: 25px;
+            background-color: #ffffff;
+        }
+
+        .email-footer {
+            background-color: #f6f6f6;
+            padding: 25px;
+        }
+         .button {
+            display: inline-block;
+            background: #0070f3;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+         }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <div class="email-header">
+            <h1>Welcome to Beta Learning</h1>
+        </div>
+        <div class="email-body">
+            <p>Hi <%= user.name %>,</p>
+            <p>Thank you for signing up to Beta Learning. Please click the link below to activate your account.</p>
+            <h2><%= activateCode %></h2>
+            <p>Please enter this code to activate the account</p>
+            <p>Once you have activated your account, you will be able to login and start using Beta Learning.</p>
+            <p>Thanks,</p>
+            <p>Beta Learning Team</p>
+        </div>
+        <div class="email-footer">
+            <p>If you have any question please contact us at <a href="mailto:info@devcircleafrica.com">info@devcircleafrica.com</a> </p>
+        </div>
+    </div>
+</body>
+</html>

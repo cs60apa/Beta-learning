@@ -4,6 +4,8 @@ import userModel from "../models/user.model";
 import ErrorHandler from "../utils/ErrorHandler";
 import { CatchAsyncError }  from "../middleware/catchAsyncError"
 import jwt, { Secret } from 'jsonwebtoken';
+import ejs from 'ejs';
+import path from 'path';
 
 // register user => /api/v1/register
 interface IRegistrationBody {
@@ -34,6 +36,9 @@ export const registerUser = CatchAsyncError(async (req: Request, res: Response, 
 
          const activationCode = activationToken.activationCode;
 
+         const data = {user: {name:user.name}, activationCode}
+
+         const html = await ejs.renderFile(path.join(__dirname, ""))
 
         
     } catch (error:any){
