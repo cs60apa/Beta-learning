@@ -6,6 +6,7 @@ import { CatchAsyncError }  from "../middleware/catchAsyncError"
 import jwt, { Secret } from 'jsonwebtoken';
 import ejs from 'ejs';
 import path from 'path';
+import sendMail from "../utils/sendMail";
 
 // register user => /api/v1/register
 interface IRegistrationBody {
@@ -40,13 +41,20 @@ export const registerUser = CatchAsyncError(async (req: Request, res: Response, 
 
          const html = await ejs.renderFile(path.join(__dirname, "../mails/activation-mail.ejs"), data);
 
-         try 
+         try{
+            await sendMail({
+                email: user.email,
+                subject: "Account Activation",
+                template: "activation-mail.ejs",
+                data,
+            });
+            } catch (error){
+                
+            }
+        } catch (error: any) {
+            return next(new ErrorHandler(error.message, 500))
+        }
 
-        
-    } catch (error:any){
-        return next(new ErrorHandler(error.message, 400))
-    }
-})
 
 // create activation token
 interface IActivateToken{
