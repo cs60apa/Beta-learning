@@ -38,7 +38,9 @@ export const registerUser = CatchAsyncError(async (req: Request, res: Response, 
 
          const data = {user: {name:user.name}, activationCode}
 
-         const html = await ejs.renderFile(path.join(__dirname, ""))
+         const html = await ejs.renderFile(path.join(__dirname, "../mails/activation-mail.ejs"), data);
+
+         try 
 
         
     } catch (error:any){
