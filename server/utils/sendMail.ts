@@ -22,10 +22,10 @@ const sendMail = async (options: IEmailOptions): Promise<void> => {
   });
   const { email, subject, template, data } = options;
 
-  // render html template
+  // get the path to the email template
   const templatePath = path.join(__dirname, "../mails", template);
 
-  // render html template
+  // render email html template
   const html: string = await ejs.renderFile(templatePath, data);
 
   const mailOptions = {
