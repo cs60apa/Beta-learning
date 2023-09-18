@@ -72,4 +72,4 @@ export const createActivationToken = (user:any):IActivateToken => {
     }  )
 
     return {token, activationCode}
-}   
+} 
